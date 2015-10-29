@@ -1,0 +1,9 @@
+all: GEN SYM
+
+GEN:
+	gcc -O3 -fPIC -Wall -o SWMNetwork-GEN -L /home/harry/SpatialWM/C-Code/GotoBLAS2-Multithread -lgoto2 -L /export/intel/Compiler/12.0/mkl/lib/intel64 -L /export/intel/Compiler/12.0/lib/intel64 -ldl -limf -lifcore -lsvml -lm -lgfortran -lpthread main.general.c minIni.c simpson.c randomlib.c -Wl,-rpath,. -std=c99
+
+
+SYM:
+	gcc -O3 -fPIC -Wall -o SWMNetwork-SYM -L /home/harry/SpatialWM/C-Code/GotoBLAS2-Multithread -lgoto2 -L /export/intel/Compiler/12.0/mkl/lib/intel64 -L /export/intel/Compiler/12.0/lib/intel64 -ldl -limf -lifcore -lsvml -lm -lgfortran -lpthread main.symmetric.c minIni.c simpson.c randomlib.c -Wl,-rpath,. -std=c99
+

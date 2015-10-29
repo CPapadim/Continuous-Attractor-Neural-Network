@@ -1,0 +1,67 @@
+[Simulation]
+numSims=1		#Number of simulations to do with these params
+tmax=4500		#Simulation time
+h=0.1			#Simulation time step
+
+c1=501			#Stimulation 1 cell range(from)
+c2=600			#Stimulation 1 cell range(to)
+stim1_amp=-0.07		#Stimulation 1 amplitude
+stim1_interval1=250	#Start of stimulation 1
+stim1_interval2=500	#End of stimulation 1
+
+d1=1			#Stimulation 2 cell range(from)
+d2=100			#Stimulation 2 cell range(to)
+stim2_amp=-0.07		$Stimulation 2 amplitude
+stim2_interval1=1750	#Start of stimulation 2
+stim2_interval2=2000	#End of stimulation 2
+
+stimR_amp=-0.14		#Reset signal amplitude
+stimR_interval1=1500	#Start of Reset signal
+stimR_interval2=1600	#End of Reset signal
+
+[Network]
+Nt=1280			#Number of total neurons
+Ne_Fraction=0.8		#Fraction of cells that are excitatory
+Cext=1000		#Number of external excitatory connections
+v_ext1=1.8		#External Spike rate from individual cells
+
+#Network Connectivity
+J_plus=1.62		#Connectivity peak weight
+sigma_ee=14.4		#Connectivity weight standard deviation
+
+[Cell Parameters]
+Vl=-70			#Leak potential
+Vthr=-50		#Voltage threshold for firing
+V_E=0			#Excitatory synapse reversal potential
+V_I=-70			#Inhibitory synapse reversal potential
+Vreset=-60		#When a cell fires, V is reset to this
+tau_ampa=2		#Ampa time constant
+tau_gaba=10		#Gaba time constant
+tau_nmda_rise=2		#NMDA rising time constant
+tau_nmda_decay=100	#NMDA decay time constant
+alpha=0.5		#NMDA-related constant
+Mg=1			#NMDA-related constnat (Mg conc in mM)
+B=0.062			#NMDA-related constant
+
+#Pyramidal Cells
+Cmp=0.500		#Pyramidal membrane capacitance
+gmp=0.025		#Pyramidal leak conductance
+tau_rp_pyr=2		#Pyramidal refractory period
+
+#Interneurons
+Cmi=0.200		#Interneuron membrance capacitance
+gmi=0.020		#Interneuron leak conductance
+tau_rp_int=1		#Interneuron refractory period
+
+[Synapse Conductances]
+
+#Pyramidal Cells
+gAMPA_ext_pyr=0.0023		#Ampa external conductances for Cext
+gGABA_pyr=0.00330973451		#Gaba recurrent conductances
+GABA_NMDA_RATIO_pyr=4.48458407	#Ratio between GABA and NMDA conductances
+
+#Interneurons
+gAMPA_ext_int=0.00174786	#Ampa external conductances for Cext
+gGABA_int=0.00247413793		#Gaba recurrent conductances
+GABA_NMDA_RATIO_int=4.28412069	#Ratio between GABA and NMDA conductances
+
